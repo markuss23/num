@@ -206,6 +206,27 @@ LSA <- function(x,y,n){
 }
 ```
 
+<img width="773" height="1015" alt="image" src="https://github.com/user-attachments/assets/cf54da82-7459-45a8-af64-a2ecfb1add9d" />
+
+
+```r
+set.seed(1)
+x <- seq(-3, 3, 0.5)
+y <- x^2 + rnorm(length(x), sd=2)   # x^2 + šum
+
+# fit kvadratického polynomu (n=3 → a0 + a1*x + a2*x^2)
+coef <- LSA(x,y,n=3)
+coef
+xx <- seq(-3, 3, 0.1)
+yy <- coef[1] + coef[2]*xx + coef[3]*xx^2
+
+plot(x, y, col="red", pch=19, main="Aproximace dat polynomem")
+lines(xx, yy, col="blue", lwd=2)
+legend("topleft", legend=c("data","aproximace"), col=c("red","blue"), pch=c(19,NA), lty=c(NA,1))
+
+
+```
+
 Spočte koeficienty aproximačního polynomu stupně $n-1$ pro body zadané vektory $\vec{x}$, $\vec{y}$.
 
 ## Diferenciální rovnice
