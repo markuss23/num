@@ -171,6 +171,27 @@ Lagrange <- function(xa,x,y){
 }
 ```
 
+<img width="838" height="618" alt="image" src="https://github.com/user-attachments/assets/41c9cbb5-0663-439a-af08-b405bbb7afcd" />
+
+```r
+
+x <- c(0,1,2)
+y <- c(0,1,4)
+
+# interpolace v bodě 1.5
+Lagrange(1.5, x, y)
+
+# jemná síť pro hladký graf
+xx <- seq(0,2,0.1)
+yy <- sapply(xx, function(z) Lagrange(z, x, y))
+
+plot(x, y, col="red", pch=19, xlim=c(0,2), ylim=c(0,4), main="Lagrangeova interpolace")
+lines(xx, yy, col="blue", lwd=2)
+legend("topleft", legend=c("body","interpolace"), col=c("red","blue"), pch=c(19,NA), lty=c(NA,1))
+
+
+```
+
 Spočte hodnotu interpolačního polynomu v bodě $x_a$ pro body zadané vektory $\vec{x}$, $\vec{y}$.
 
 ## Aproximace
