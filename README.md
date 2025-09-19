@@ -133,6 +133,19 @@ GaussPivot <- function(A,b) {
 }
 ```
 
+<img width="749" height="386" alt="image" src="https://github.com/user-attachments/assets/47938b17-4755-47c3-b988-56e285d992d0" />
+
+
+```r
+
+A <- matrix(c(2,1,1,-1), nrow=2, byrow=TRUE)
+b <- c(5,1)
+
+GaussPivot(A,b)   # vlastní funkce
+solve(A,b)        # vestavěná funkce v R
+
+```
+
 Řeší soustavu rovnic zadanou ve tvaru $Ax = b$.
 
 ## Interpolace
