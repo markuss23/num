@@ -310,3 +310,23 @@ Diferenciální rovnice = vývoj v čase.
 Kořeny = kde je nula.
 
 Polynomy = rychlý výpočet/lepší aproximace.
+
+
+---- 
+
+zakladni prace s grafy a funkcemi
+```r
+f <- function(x) {
+  return(x^2)
+}
+
+x = seq(-5, 5, 1)
+y = f(x)
+
+plot(x,y)
+
+
+g = function(x) x^2
+
+lines(x, g(x))
+```
