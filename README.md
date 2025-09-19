@@ -238,6 +238,30 @@ EulerStep <- function(f,x,y,h) {
 	return(y+h*f(x,y))
 }
 ```
+<img width="773" height="1178" alt="image" src="https://github.com/user-attachments/assets/9c66eb6c-a823-4c6e-9c3b-c579bbeae344" />
+
+```r
+f <- function(x,y) y
+
+# parametry
+h <- 0.1
+x <- seq(0, 2, h)
+y <- numeric(length(x))
+y[1] <- 1   # počáteční podmínka
+
+# Eulerův krok
+for(i in 1:(length(x)-1)){
+  y[i+1] <- EulerStep(f, x[i], y[i], h)
+}
+
+# graf
+plot(x,y, type="l", col="red", lwd=2, main="Eulerova metoda")
+lines(x, exp(x), col="blue", lwd=2, lty=2)
+legend("topleft", legend=c("Euler","přesné e^x"), col=c("red","blue"), lwd=2, lty=c(1,2))
+
+
+
+```
 
 Řeší jeden krok obyčejné diferenciální rovnice zadané ve formě $f(x,y)$ s krokem $h$.
 
