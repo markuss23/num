@@ -10,6 +10,16 @@ ForwardDiff <- function(f,x,h=1e-6) {
 }
 ```
 
+```r
+
+x <- seq(-5, 5, 0.1)
+y <- sapply(x, function(x0) ForwardDiff(f, x0))
+
+plot(x, y, type="l", lwd=2 ,col="red")
+lines(x, 2*x, col="blue", lwd=2, lty=2)   # přesná derivace
+
+```
+
 Spočte derivaci spojité funkce $f(x)$ v bodě $x$ s krokem $h$.
 
 ### Centrální diference
