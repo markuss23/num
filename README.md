@@ -365,6 +365,12 @@ Horner <- function(a,x){
 	return(y)
 }
 ```
+<img width="786" height="658" alt="image" src="https://github.com/user-attachments/assets/84c77485-69fd-4dcf-ab99-899e4bbaec04" />
+
+```r
+a <- c(1,2,3)   # 1 + 2x + 3x^2
+Horner(a, 2)    # výpočet v bodě x=2
+```
 
 Efektivě počítá hodnotu polynomu v bodě $x$, jež je určen vektorem koeficientů $\vec{a}$.
 
@@ -385,6 +391,22 @@ ChebyCoef <- function(n){
 	}
 	return(a)
 }
+```
+<img width="818" height="1174" alt="image" src="https://github.com/user-attachments/assets/69b54d7a-b9ec-4254-9803-b488bafd3c7c" />
+
+
+```r
+ChebyCoef(1)  # T0(x) = 1
+ChebyCoef(2)  # T1(x) = x
+ChebyCoef(3)  # T2(x) = 2x^2 - 1
+ChebyCoef(4)  # T3(x) = 4x^3 - 3x
+
+x <- seq(-1,1,0.01)
+
+plot(x, Horner(ChebyCoef(2), x), type="l", col="red", lwd=2, ylim=c(-1,1), main="Čebyševovy polynomy")
+lines(x, Horner(ChebyCoef(3), x), col="blue", lwd=2)
+lines(x, Horner(ChebyCoef(4), x), col="green", lwd=2)
+legend("topright", legend=c("T1","T2","T3"), col=c("red","blue","green"), lwd=2)
 ```
 
 Vrací koeficienty Čebyševova polynomu stupně $n-1$.
