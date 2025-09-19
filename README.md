@@ -246,3 +246,50 @@ ChebyCoef <- function(n){
 ```
 
 Vrací koeficienty Čebyševova polynomu stupně $n-1$.
+
+#### -----
+
+Derivace
+
+- Dopředná – když jsem na začátku intervalu, potřebuji rychlý odhad.
+
+- Centrální – když mám hodnoty vlevo i vpravo, přesnější.
+
+Integrály
+
+- Střední bod – rychlý přibližný výpočet plochy pod křivkou.
+
+- Simpson – přesnější výpočet integrálu, lepší pro hladké funkce.
+
+- Monte Carlo – když je integrál složitý nebo ve více rozměrech.
+
+Soustavy rovnic
+
+- Gaussova eliminace – klasická metoda na řešení soustavy Ax=b.
+
+Interpolace
+
+- Lagrange – spočítá hodnotu mezi známými body.
+
+Aproximace
+
+- LSA (nejmenší čtverce) – když mám data se šumem, najdu polynom, který se nejlépe hodí.
+
+Diferenciální rovnice
+
+- Eulerova metoda – jednoduchá, hrubý odhad řešení.
+
+- RK4 – přesnější než Euler, používá se skoro vždy.
+
+Hledání kořenů
+
+- Bisekce – pomalá, ale jistá, když se funkce na intervalu mění ze + na –.
+
+- Newtonova metoda – rychlá, když mám dobrý start.
+
+Polynomy
+
+- Horner – rychlé a jednoduché vyčíslení polynomu.
+
+- Čebyšev – speciální polynomy na lepší aproximaci funkcí.
+
