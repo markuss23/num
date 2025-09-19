@@ -1,0 +1,46 @@
+# Numerické metody v R
+
+Tento přehled ukazuje základní numerické metody (derivace, integrály) s teorií a příklady v R.
+
+---
+
+## 1️⃣ Derivace
+
+### Teorie
+Derivace \( f(x) \) v bodě \(x\) ukazuje rychlost změny funkce.  
+Pokud neumíme derivovat analyticky, můžeme použít numerický odhad.
+
+- **Dopředná diference**  
+\[
+f'(x) \approx \frac{f(x+h) - f(x)}{h}
+\]
+
+- **Centrální diference**  
+\[
+f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}
+\]
+
+Menší krok \(h\) → větší přesnost.
+
+### R příklad
+
+```r
+# Funkce
+f <- function(x) x^2
+
+# Bod, kde derivujeme
+x0 <- 2
+
+# Malý krok
+h <- 0.001
+
+# Dopředná diference
+forward <- (f(x0 + h) - f(x0)) / h
+
+# Centrální diference
+central <- (f(x0 + h) - f(x0 - h)) / (2*h)
+
+# Přesná derivace: f'(x) = 2x
+exact <- 2 * x0
+
+forward; central; exact
