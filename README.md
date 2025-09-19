@@ -292,4 +292,21 @@ Polynomy
 - Horner – rychlé a jednoduché vyčíslení polynomu.
 
 - Čebyšev – speciální polynomy na lepší aproximaci funkcí.
+--------
 
+
+Derivace = sklon.
+
+Integrály = plocha.
+
+Soustavy rovnic = řešení lineárních úloh.
+
+Interpolace = hodnota mezi body.
+
+Aproximace = fit k datům.
+
+Diferenciální rovnice = vývoj v čase.
+
+Kořeny = kde je nula.
+
+Polynomy = rychlý výpočet/lepší aproximace.
