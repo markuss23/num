@@ -306,6 +306,24 @@ BisecRoot <- function(f,a,b){
 	}
 }
 ```
+<img width="735" height="1001" alt="image" src="https://github.com/user-attachments/assets/fa6f24ec-ffd3-4616-a058-291a22404828" />
+
+```r
+
+f <- function(x) cos(x) - x
+
+# zvolíme interval, kde se mění znaménko
+a <- 0; b <- 1
+root_bisec <- BisecRoot(f, a, b)
+root_bisec
+
+
+xx <- seq(0,1,0.001)
+plot(xx, f(xx), type="l", lwd=2, main="f(x)=cos x - x")
+abline(h=0, lty=2)
+abline(v=root_bisec, col="red")
+
+```
 
 Nalezne kořen spojité funkce $f(x)$ na intervalu $(a,b)$. $f(a)$ a $f(b)$ se musí lišit znaménkem.
 
@@ -321,6 +339,16 @@ NewtonRoot <- function(f,x0,tol=1e-6) {
 		x <- x - dx
 	}
 }
+```
+
+<img width="749" height="1203" alt="image" src="https://github.com/user-attachments/assets/6af47cb3-e829-41e7-88b8-fcf96a68c627" />
+
+```r
+f <- function(x) cos(x) - x
+
+root_newton <- NewtonRoot(f, x0 = 0.5)   # rozumný start v okolí kořene
+root_newton
+
 ```
 
 Nalezne kořen spojité funkce $f(x)$ při počátečním odhadu $x_0$.
