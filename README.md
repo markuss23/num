@@ -42,6 +42,31 @@ MidpointRule <- function(f,a,b,n=1e6) {
 	return(h*sum(f(a+h*(1:n)-h/2)))
 }
 ```
+<img width="741" height="598" alt="image" src="https://github.com/user-attachments/assets/76a46137-0ccf-45d2-8935-31022107fe54" />
+
+
+```r
+f <- function(x) x^2
+
+a <- 0
+b <- 1
+n <- 5                        # počet obdélníků
+h <- (b-a)/n
+
+# Midpoint hodnota
+MidpointRule(f,a,b,n)
+
+# Vykreslení
+x <- seq(a, b, 0.01)
+plot(x, f(x), type="l", lwd=2, col="blue", main="Midpoint Rule", ylab="f(x)")
+
+# nakreslíme obdélníky
+for(i in 1:n){
+  mid <- a + (i-0.5)*h
+  rect(a+(i-1)*h, 0, a+i*h, f(mid), border="red", col=rgb(1,0,0,0.3))
+}
+```
+
 
 Spočte integrál $f(x)$ na intervalu $(a,b)$.
 
