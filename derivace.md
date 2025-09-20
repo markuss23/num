@@ -1,3 +1,6 @@
+<img width="591" height="491" alt="image" src="https://github.com/user-attachments/assets/b4c957b4-738c-41e1-9dae-472e75e7b214" />
+
+
 ```r
 
 # 00_settings.R -----------------------------------------------------------
@@ -134,3 +137,8 @@ plot(xi, yi, pch=19, col="red", main="Lagrange"); lines(xx, yy, lwd=2)
 a <- c(1,2,3) # 1 + 2x + 3x^2
 Horner(a, 2)
 ```
+
+
+<img width="654" height="725" alt="image" src="https://github.com/user-attachments/assets/e15a4228-67f2-468d-859e-64349330e622" />
+
+
