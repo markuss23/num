@@ -141,4 +141,39 @@ Horner(a, 2)
 
 <img width="654" height="725" alt="image" src="https://github.com/user-attachments/assets/e15a4228-67f2-468d-859e-64349330e622" />
 
+------
+
+
+<img width="603" height="1187" alt="image" src="https://github.com/user-attachments/assets/e7604a92-7b77-48ed-966b-534bbbeb6718" />
+
+```r
+
+LSA <- function(x, y, degree){
+  # Vytvoříme matici X
+  X <- sapply(0:degree, function(k) x^k)
+  
+  # Normální rovnice
+  coef <- solve(t(X) %*% X, t(X) %*% y)
+  return(coef)   # vrátí koeficienty polynomu
+}
+set.seed(1)
+x <- seq(-3, 3, 0.5)
+y <- x^2 + rnorm(length(x), sd=2)
+
+# Aproximace polynomem 2. stupně (kvadratická funkce)
+coef <- LSA(x, y, degree=2)
+coef
+xx <- seq(-3,3,0.1)
+yy <- coef[1] + coef[2]*xx + coef[3]*xx^2
+
+plot(x, y, col="red", pch=19, main="Metoda nejmenších čtverců")
+lines(xx, yy, col="blue", lwd=2)
+legend("topleft", legend=c("data","aproximace"), col=c("red","blue"), pch=c(19,NA), lty=c(NA,1))
+
+
+
+
+
+```
+
 
