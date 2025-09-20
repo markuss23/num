@@ -494,3 +494,49 @@ g = function(x) x^2
 
 lines(x, g(x))
 ```
+
+
+Lorenzův atraktor
+
+
+<img width="614" height="1186" alt="image" src="https://github.com/user-attachments/assets/0b85cb9c-e82a-4f23-8dee-b9c57223db97" />
+
+
+```r
+
+# Runge-Kutta 4. řádu pro systém
+RK4_step <- function(f, t, y, h) {
+  k1 <- f(t, y)
+  k2 <- f(t + h/2, y + h/2*k1)
+  k3 <- f(t + h/2, y + h/2*k2)
+  k4 <- f(t + h, y + h*k3)
+  return(y + h*(k1 + 2*k2 + 2*k3 + k4)/6)
+}
+
+# Lorenzův systém
+lorenz <- function(t, state, sigma=10, rho=28, beta=8/3) {
+  x <- state[1]; y <- state[2]; z <- state[3]
+  dx <- sigma * (y - x)
+  dy <- x * (rho - z) - y
+  dz <- x*y - beta*z
+  return(c(dx, dy, dz))
+}
+# parametry
+h <- 0.01
+n <- 10000
+t <- numeric(n)
+out <- matrix(0, nrow=n, ncol=3)
+out[1,] <- c(1, 1, 1)   # počáteční stav
+
+for(i in 1:(n-1)) {
+  out[i+1,] <- RK4_step(function(t,y) lorenz(t,y), t[i], out[i,], h)
+  t[i+1] <- t[i] + h
+}
+library(rgl)  # balíček na 3D graf
+
+par(mfrow=c(1,3))
+plot(out[,1], out[,2], type="l", col="red", main="x-y")
+plot(out[,1], out[,3], type="l", col="blue", main="x-z")
+plot(out[,2], out[,3], type="l", col="green", main="y-z")
+
+```
